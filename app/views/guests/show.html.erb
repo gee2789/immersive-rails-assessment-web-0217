@@ -1,0 +1,14 @@
+<h1><%= @guest.name%> </h1>
+<h3>Occupation: <%= @guest.occupation.titleize%></h3>
+
+<h2> Make a New Appearance</h2>
+<%= form_for @episodeguest do |f| %>
+<%= f.hidden_field :guest_id, @guest.id %>
+
+<%= f.label :episode_id, "Episode Number" %>
+<%= f.number_field :episode_id %><br />
+
+<% f.label :rating %>
+<% f.check_box :rating %>
+<input name="post[validated]" type="hidden" value="0" />
+<%end%>
